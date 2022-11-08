@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>State Highpoint Visualization</title>
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v4.js"></script>
+    <script src="https://d3js.org/topojson.v3.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    
+    <script src="js/dashboard_op.js"></script>
+    <script src="js/cumulative_timeseries_op.js"></script>
+    <script src="js/summary_map_lp.js"></script>
+    <script src="js/summary_table_lp.js"></script>
+    <script src="js/initialize.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Highpoint Overview</h1>
+        <p>Welcome! Highpointing is the act of visiting the highest point of elevation in each state</p>
+    </div>
+
+    <div id='landing_page' class = 'row'>
+        <svg id="summary_map_lp" width = '1000' height = '610'>
+            <g id="states"></g>
+            <g id="highpoints"></g>
+        </svg>
+        <table id="summary_table_lp">
+            <thead>
+
+                <th class="sortable">State<i class="fas no-display"></i></th>
+                <th class="sortable">Peak<i class="fas no-display"></i></th>
+                <th class="sortable">Elevation<i class="fas no-display"></i></th>
+                <th class="sortable">Elevation Display<i class="fas no-display"></i></th>
+
+
+            </thead>
+            <tbody id="predictionTableBody">
+
+            </tbody>
+        </table>
+    </div>
+    
+    <hr>
+    
+    
+    
+    
+    <div id = 'input_page'>
+        <input type="file" accept=".csv" id = 'input_upload' />
+<!--             <a href="/data/high_point_template.csv" download>
+                <button id = 'download_template' class="button" type="button" height = '34px' >Download Template</button> 
+            </a> -->
+        <a href="/data/high_point_template.csv" download>Download File</a>
+    </div>
+    
+    <hr>
+    <div id = 'output_page'>
+
+        <svg id = 'elevation_timeseries_op' width = '800' height = '400'>
+            <g id = 'elevations'></g>
+            <g id = 'e_x-axis'></g>
+            <g id = 'e_y-axis'></g>
+        </svg>
+
+        <svg id ='barchart_per_year_op' width = '800' height = '400'>
+            <g id = 'elevations'></g>
+            <g id = 'b_x-axis'></g>
+            <g id = 'b_y-axis'></g>
+        </svg>
+
+        <svg id ='state_pie_chart_op' width = '300' height = '300'>
+            <g id = 'chart'></g>
+            <g id = 'label'></g>
+
+        </svg>
+
+        
+    </div>
+        
+</body>
+
+</html>

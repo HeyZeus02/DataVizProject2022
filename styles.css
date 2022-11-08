@@ -1,0 +1,18 @@
+/* Allows the two to be side by side */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* These can be removed after styling and placement*/
+table, th, td {
+    border: 1px solid;
+}
+
+#elevation_timeseries_op {
+    border: 1px solid;
+}
+
+#barchart_per_year_op {
+    border: 1px solid;
+}
