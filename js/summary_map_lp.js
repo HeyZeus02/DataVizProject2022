@@ -1,16 +1,14 @@
+// This function creates the map on the landing page
 function lp_map() {  
-   
 
     // Set up the map projection
     const projection = d3.geoAlbersUsa().scale(1300).translate([487.5, 305])
     
-
-
     // Set the projection to the path  
     let path = d3.geoPath()
         .projection(projection);
     
-   // Add each state to the map
+    // Add each state to the map
     d3.select("#summary_map_lp").select('#states').selectAll("path")
         .data(mapData.features)
         .join("path")
