@@ -86,6 +86,10 @@ html, body #tabsvg, #tabs{
     background-color:  rgba(255, 255, 255, .8);
 }
 
+#elevation_pie_chart_op {
+    background-color:  rgba(255, 255, 255, .8);
+}
+
 #inputdiv {
     margin: auto;
     width: 500px;

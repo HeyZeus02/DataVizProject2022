@@ -45,6 +45,8 @@ loadData().then((loadedData) => {
     lp_table();
     sort_data();
 
+    
+
 
 
     

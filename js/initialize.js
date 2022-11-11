@@ -190,6 +190,7 @@ function handleFileLoad(event) {
     for (let i = 0; i<high_points.length; i++){
         high_points[i].Date = user_input[i].date;
         high_points[i].Year = parseInt(String(user_input[i].date).split(' ')[3]);
+        high_points[i].Visited = high_points[i].Date == 'Invalid Date' ? 0:1;
     }
 
     // Filter out only visited highpoints and store 
@@ -207,6 +208,7 @@ function handleFileLoad(event) {
     // Call function to make the output graphs
     make_timeseries();
     state_pie_chart_op();
+    elevation_pie_chart_op();
     gen_bar_chart();
     gen_arrow_map();
 
@@ -331,6 +333,8 @@ function on_tab_click() {
     // Add in functionality so that when tab is clicked the correct page is displayed
     d3.select('#tabsvg')
     .selectAll('g').on('click',on_tab_click)
+
+    console.log(high_points);
     
 
 }
