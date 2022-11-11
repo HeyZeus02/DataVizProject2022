@@ -27,37 +27,67 @@ function make_timeseries(){
             .call(d3.axisLeft(yScale))
             .attr('transform', `translate(${MARGIN+MARGIN+MARGIN}, ${MARGIN})`);
 
-        // let line_data;
-        // line_data[0].Cum_Elevation = 0
-        // line_data[0].Date = 
+        let line_data =[];
 
-        //     for (let i = 1; i<visited_highpoints; i++){
-        //     line_data[i*2] =
-        //     line_data[(i*2)+1].Date = visited_highpoints[i].Date;
-        //     line_data[(i*2)+1].Cum_Elevation = visited_highpoints[i-1].Cum_Elevation
-        // }
+        for (let i = 0; i<visited_highpoints.length; i++){
+            if (i == 0){
+                // line_data[0].Date = visited_highpoints[i].Date;
+                // console.log(i);
+                // line_data[0].Cum_Elevation = 0;
+                // line_data[1].Date = visited_highpoints[i].Date;
+                // line_data[1].Cum_Elevation = visited_highpoints[i].Cum_Elevation;
+                                // line_data[0].Date = visited_highpoints[i].Date;
+                // console.log(i);
+                line_data.push({Date: visited_highpoints[i].Date, Cum_Elevation:0, odd:false, mountain_top: visited_highpoints[i].Cum_Elevation});
+                line_data.push({Date: visited_highpoints[i].Date, Cum_Elevation: visited_highpoints[i].Cum_Elevation, odd: true, mountain_bottom:0});
+            }
+            else {
+                console.log(i);
+                // line_data[i*2].Date = visited_highpoints[i].Date;
+                // line_data[i*2].Cum_Elevation = visited_highpoints[i-1].Cum_Elevation;
+                // line_data[(i*2)+1].Date = visited_highpoints[i].Date;
+                // line_data[(i*2)+1].Cum_Elevation = visited_highpoints[i].Cum_Elevation;
+                line_data.push({Date: visited_highpoints[i].Date , Cum_Elevation: visited_highpoints[i-1].Cum_Elevation, odd: false, mountain_top: visited_highpoints[i].Cum_Elevation});
+                line_data.push({Date: visited_highpoints[i].Date , Cum_Elevation: visited_highpoints[i].Cum_Elevation, odd: true, mountain_bottom: visited_highpoints[i-1].Cum_Elevation});
+            }
+        }
+
+        console.log(line_data)
+        let m_width = 10;
 
             // Generate the line using D3 that will define the path element
         let lineGenerator = d3
             .line()
-            .x((visited_highpoints) => xScale(visited_highpoints.Date))
-            .y((visited_highpoints) => yScale(visited_highpoints.Cum_Elevation) + MARGIN);
+            .x((line_data) => xScale(line_data.Date))
+            .y((line_data) => yScale(line_data.Cum_Elevation) + MARGIN);
 
 
         d3.select('#elevation_timeseries_op').select('#elevations')
-            .selectAll('circle')
-            .data(visited_highpoints)
-            .join('circle')
-            .attr('cx', d => xScale(d.Date))
-            .attr('cy', d => yScale(d.Cum_Elevation)+MARGIN)
-            .attr('r', 5)
-            .attr('fill', 'black');
+            .selectAll('line')
+            .data(line_data)
+            .join('line')
+            .attr('x1', d => d.odd == true ? xScale(d.Date) + m_width : xScale(d.Date) - m_width)
+            .attr('y1', d => d.odd == true ? yScale(d.mountain_bottom)+MARGIN : yScale(d.Cum_Elevation)+MARGIN  )
+            .attr('x2', d => xScale(d.Date))
+            .attr('y2', d =>d.odd == true ?  yScale(d.Cum_Elevation)+MARGIN : yScale(d.mountain_top)+MARGIN)
+            .attr('stroke-width', '2px')
+            .attr('stroke', 'black');
         
         d3.select('#elevation_timeseries_op').select('#lines')
             .append('path')
-            .datum(visited_highpoints)
+            .datum(line_data)
             .attr('d', lineGenerator)
             .attr('stroke','black')
             .attr('fill', 'none');
+
+            d3.select('#elevation_timeseries_op').select('#labels')
+            .selectAll('text')
+            .data(visited_highpoints)
+            .join('text')
+            .text(d => d.Peak +', ' + d.Abreviation)
+            .attr('text-anchor', d => xScale(d.Date)-m_width > 200 ? 'end' : 'start')
+            .attr('x', d => xScale(d.Date)-m_width > 200 ? xScale(d.Date)-m_width : xScale(d.Date)+m_width)
+            .attr('y', d => yScale(d.Cum_Elevation - d.Elevation/2)+ MARGIN + 5);
+
 
 }
