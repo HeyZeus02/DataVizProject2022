@@ -12,6 +12,8 @@
     <script src="https://d3js.org/topojson.v3.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     
+    <script src="js/arrow_map_op.js"></script>
+    <script src="js/bar_chart_op.js"></script>
     <script src="js/dashboard_op.js"></script>
     <script src="js/cumulative_timeseries_op.js"></script>
     <script src="js/summary_map_lp.js"></script>
@@ -21,11 +23,18 @@
 </head>
 
 <body>
-    <div class="header">
-        <h1>Highpoint Overview</h1>
-        <p>Welcome! Highpointing is the act of visiting the highest point of elevation in each state</p>
-    </div>
 
+
+<div id="tabs">
+    <svg id="tabsvg">
+        <g id = 'tab3'></g>
+        <g id = 'tab2'></g>
+        <g id = 'tab1'></g>
+        <g id = 'Title'></g>
+        
+    
+    </svg>
+</div>
     <div id='landing_page' class = 'row'>
         <svg id="summary_map_lp" width = '1000' height = '610'>
             <g id="states"></g>
@@ -45,26 +54,32 @@
 
             </tbody>
         </table>
+
+        
     </div>
-    
-    <hr>
-    
+
     
     
     
-    <div id = 'input_page'>
+    
+    
+    <div id = 'input_page' class = 'hidden'>
+        <!-- <div id = 'inputdiv' width = '500' height ='500'> -->
+
         <input type="file" accept=".csv" id = 'input_upload' />
-<!--             <a href="/data/high_point_template.csv" download>
-                <button id = 'download_template' class="button" type="button" height = '34px' >Download Template</button> 
-            </a> -->
-        <a href="/data/high_point_template.csv" download>Download File</a>
+
+
+        <a href="data/high_point_template.csv" download>Download File</a>
+
+            <!-- </div> -->
     </div>
     
-    <hr>
-    <div id = 'output_page'>
+    
+    <div id = 'output_page' class="hidden">
 
         <svg id = 'elevation_timeseries_op' width = '800' height = '400'>
             <g id = 'elevations'></g>
+            <g id = 'lines'></g>           
             <g id = 'e_x-axis'></g>
             <g id = 'e_y-axis'></g>
         </svg>
@@ -75,14 +90,22 @@
             <g id = 'b_y-axis'></g>
         </svg>
 
+        <svg id = 'arrow_map_op' width ='800' height = '400'>
+            <g id="states"></g>
+            <g id="highpoints"></g>
+            <g id="arrows"></g>
+        </svg>
+
         <svg id ='state_pie_chart_op' width = '300' height = '300'>
-            <g id = 'chart'></g>
-            <g id = 'label'></g>
+
 
         </svg>
+        
 
         
     </div>
+    <div id = 'cover'></div>
+
         
 </body>
 
