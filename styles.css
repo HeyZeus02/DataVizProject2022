@@ -16,3 +16,92 @@ table, th, td {
 #barchart_per_year_op {
     border: 1px solid;
 }
+
+html, body #tabsvg, #tabs{
+    width: 100%;
+    height: 200px;
+    background-color: white;
+    gap: 0px;
+  }
+
+
+
+#landing_page{
+    background-color: #95DBE5FF;
+    padding-top:25px;
+    padding-bottom:25px;
+    text-align: center;
+    justify-content: center;
+    
+}
+
+#landing_page.hidden{
+    display: none;
+}
+
+#input_page{
+    background-color: #078282FF;
+    padding-top:25px;
+    padding-bottom:25px;
+    text-align: center;
+    justify-content: center;
+    border: 3px solid black;
+    
+}
+
+#input_page.hidden{
+    display: none;
+}
+
+#output_page{
+    background-color: #339E66FF;
+    padding-top:25px;
+    padding-bottom:25px;
+    text-align: center;
+    justify-content: center;
+    
+}
+
+#output_page.hidden{
+    display: none;
+}
+
+#Title {
+    position: absolute;
+}
+
+#elevation_timeseries_op {
+    background-color:  rgba(255, 255, 255, .8);
+}
+
+#barchart_per_year_op {
+    background-color:  rgba(255, 255, 255, .8);
+}
+
+#arrow_map_op {
+    background-color:  rgba(255, 255, 255, .8);
+}
+
+#state_pie_chart_op {
+    background-color:  rgba(255, 255, 255, .8);
+}
+
+#inputdiv {
+    margin: auto;
+    width: 500px;
+    height: 500px;
+    background-color: rgba(255, 255, 255, .8);
+    pointer-events: none;
+    border: 3px solid;
+    text-align: center;
+    line-height: 6px;
+  
+  }
+
+  #cover {
+    position: relative;
+    width: 100px;
+    height: 20px;
+    background-color: #078282FF;
+
+  }
