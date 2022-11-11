@@ -24,7 +24,8 @@ function lp_table() {
     let rowSelection = d3.select('#predictionTableBody')
         .selectAll('tr')
         .data(table_data)
-        .join('tr');
+        .join('tr')
+        .attr('id',d => d.state + '_tr');
 
     // Add Cells
     rowSelection.selectAll("td")
@@ -77,6 +78,9 @@ function lp_table() {
             .attr('fill', 'black');
 
     });
+
+    d3.selectAll("tr")
+    .on('mouseover', highlight_states);
     
     
 } // end of lp_table()

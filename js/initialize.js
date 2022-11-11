@@ -206,6 +206,7 @@ function handleFileLoad(event) {
 
 
     // Call function to make the output graphs
+    draw_completed_map();
     make_timeseries();
     state_pie_chart_op();
     elevation_pie_chart_op();

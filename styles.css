@@ -2,11 +2,13 @@
 .row {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 /* These can be removed after styling and placement*/
 table, th, td {
     border: 1px solid;
+    background-color:rgba(255, 255, 255, .8);
 }
 
 #elevation_timeseries_op {
@@ -70,6 +72,11 @@ html, body #tabsvg, #tabs{
     position: absolute;
 }
 
+#completed_map_op {
+    background-color:  rgba(255, 255, 255, .8);
+}
+
+
 #elevation_timeseries_op {
     background-color:  rgba(255, 255, 255, .8);
 }
@@ -109,3 +116,18 @@ html, body #tabsvg, #tabs{
     background-color: #078282FF;
 
   }
+
+  #tooltip {
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, .8);
+    pointer-events: none;
+    border: 3px solid;
+    text-align: center;
+    line-height: 6px;
+  }
+
+  #tooltip.hidden {
+    display: none;
+}

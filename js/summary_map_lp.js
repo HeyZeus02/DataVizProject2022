@@ -7,16 +7,19 @@ function lp_map() {
     // Set the projection to the path  
     let path = d3.geoPath()
         .projection(projection);
+
+    console.log(mapData.features)
+
     
     // Add each state to the map
     d3.select("#summary_map_lp").select('#states').selectAll("path")
         .data(mapData.features)
         .join("path")
         .attr("d", path)
-        .attr("id", d => d.id)        
+        .attr("id", d => d.properties.name)        
         .attr('class','state')
         .attr('stroke', 'black')
-        .attr('fill', 'white');
+        .attr('fill', 'rgba(255, 255, 255, .8)');
     
     // Add each highpoint to the map
     d3.select("#summary_map_lp").select('#highpoints')
@@ -27,6 +30,11 @@ function lp_map() {
         .attr("cy", d => projection([d.X, d.Y])[1])
         .attr("r", '5')
         .style("fill", "black");
+
+    d3.select("#summary_map_lp")
+        .select('#states')
+        .selectAll("path")
+        .on('mouseover', highlight_table);
 
 
 } // End of lp_map

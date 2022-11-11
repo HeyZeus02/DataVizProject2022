@@ -12,6 +12,8 @@
     <script src="https://d3js.org/topojson.v3.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     
+    <script src="js/completed_map_op.js"></script>
+    <script src="js/event_interactions.js"></script>
     <script src="js/arrow_map_op.js"></script>
     <script src="js/bar_chart_op.js"></script>
     <script src="js/dashboard_op.js"></script>
@@ -77,6 +79,11 @@
     
     <div id = 'output_page' class="hidden">
 
+        <svg id="completed_map_op" width = '1000' height = '610'>
+            <g id="states"></g>
+            <g id="highpoints"></g>
+        </svg>
+        <div class = 'row'>
         <svg id = 'elevation_timeseries_op' width = '800' height = '400'>
             <g id = 'elevations'></g>
             <g id = 'lines'></g> 
@@ -90,7 +97,7 @@
             <g id = 'b_x-axis'></g>
             <g id = 'b_y-axis'></g>
         </svg>
-
+    </div>
         <svg id = 'arrow_map_op' width ='800' height = '400'>
             <g id="states"></g>
             <g id="highpoints"></g>
@@ -103,6 +110,13 @@
         
     </div>
     <div id = 'cover'></div>
+    <div id = 'tooltip' class = 'hidden'>
+        <p id = 'p_state'></p>
+        <p id = 'p_peak'></p>
+        <p id = 'p_elevation'></p>                
+    </div>
+
+
 
         
 </body>

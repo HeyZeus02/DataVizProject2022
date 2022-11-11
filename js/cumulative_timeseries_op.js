@@ -31,22 +31,11 @@ function make_timeseries(){
 
         for (let i = 0; i<visited_highpoints.length; i++){
             if (i == 0){
-                // line_data[0].Date = visited_highpoints[i].Date;
-                // console.log(i);
-                // line_data[0].Cum_Elevation = 0;
-                // line_data[1].Date = visited_highpoints[i].Date;
-                // line_data[1].Cum_Elevation = visited_highpoints[i].Cum_Elevation;
-                                // line_data[0].Date = visited_highpoints[i].Date;
-                // console.log(i);
                 line_data.push({Date: visited_highpoints[i].Date, Cum_Elevation:0, odd:false, mountain_top: visited_highpoints[i].Cum_Elevation});
                 line_data.push({Date: visited_highpoints[i].Date, Cum_Elevation: visited_highpoints[i].Cum_Elevation, odd: true, mountain_bottom:0});
             }
             else {
                 console.log(i);
-                // line_data[i*2].Date = visited_highpoints[i].Date;
-                // line_data[i*2].Cum_Elevation = visited_highpoints[i-1].Cum_Elevation;
-                // line_data[(i*2)+1].Date = visited_highpoints[i].Date;
-                // line_data[(i*2)+1].Cum_Elevation = visited_highpoints[i].Cum_Elevation;
                 line_data.push({Date: visited_highpoints[i].Date , Cum_Elevation: visited_highpoints[i-1].Cum_Elevation, odd: false, mountain_top: visited_highpoints[i].Cum_Elevation});
                 line_data.push({Date: visited_highpoints[i].Date , Cum_Elevation: visited_highpoints[i].Cum_Elevation, odd: true, mountain_bottom: visited_highpoints[i-1].Cum_Elevation});
             }
