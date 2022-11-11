@@ -1,4 +1,6 @@
 function gen_bar_chart(){
+
+console.log('i');
     let MARGIN = 20;
     let CHART_WIDTH = 800
     let CHART_HEIGHT = 400

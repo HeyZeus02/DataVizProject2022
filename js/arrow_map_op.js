@@ -1,4 +1,5 @@
 function gen_arrow_map() {
+console.log('i');
 
         let arrow_data = visited_highpoints;
 
