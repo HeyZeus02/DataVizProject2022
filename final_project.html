@@ -68,12 +68,58 @@
     
     
     <div id = 'input_page' class = 'hidden'>
-        <!-- <div id = 'inputdiv' width = '500' height ='500'> -->
+        <div class = 'row'>
+            <div id = 'step1' class = 'chart'>
+                <svg class = 'title_block' width = '1200'>
+                    <text id = 'state_info' x = 50% y = 30 text-anchor = 'middle' font-size = '24px' >Step 1</text>
+                </svg>
+                <div width = '1200' height = '500px' id = 'input_paragraphs' class = 'step1'>
+                    <p id = 'directions' x = 50% y = 50% text-anchor = 'middle' >Download the template from the link below.</p>
+                </div>
+                <a href="data/high_point_template.csv" download id = 'download_button'>Highpoint Template</a>
 
-        <input type="file" accept=".csv" id = 'input_upload' />
+            </div>
+        </div>
+
+        
+        <div class = 'row'>
+            <div id = 'step2' class = 'chart'>
+                <svg class = 'title_block' width = '1200'>
+                    <text id = 'state_info' x = 50% y = 30 text-anchor = 'middle' font-size = '24px' >Step 2</text>
+                </svg>
+                <div id = 'input_paragraphs'>
+                    <p id = 'directions' x = 50% y = 30 text-anchor = 'middle' font-size = '24px' >Open the downloaded template in your preferred csv editor.<br>(Microsoft Excel, Google Sheets, etc.)</p>
+                </div>
+            </div>
+        </div>
+       
+        <div class = 'row'>
+            <div id = 'step3'class = 'chart'>
+                <svg class = 'title_block' width = '1200'>
+                    <text id = 'state_info' x = 50% y = 30 text-anchor = 'middle' font-size = '24px' >Step 3</text>
+                </svg>
+                <div id = 'input_paragraphs' class = 'step3'>
+                    <p id = 'directions' x = 50% y = 20 text-anchor = 'middle' font-size = '24px' >Fill in the 3rd column with the date you visited each highpoint.<br>Leave any rows of highpoints that you didn't visit blank.<br>Do not edit any cells other than those in the third column.</p>
+                    <img src="data/example.jpg" height = '300'>
+                </div>
+
+            </div> 
+        </div>
+        <div class = 'row'>
+            <div id = 'step3'class = 'chart'>
+                <svg class = 'title_block' width = '1200'>
+                    <text id = 'state_info' x = 50% y = 30 text-anchor = 'middle' font-size = '24px' >Step 4</text>
+                </svg>
+                <div id = 'input_paragraphs' class = 'step4'>
+                    <p id = 'directions' x = 50% y = 30 text-anchor = 'middle' font-size = '24px' >Save the template to your computer and upload in the link below.</p>
+                </div>
+                <input type="file" accept=".csv" id = 'input_upload' />
+            </div> 
+        </div>
 
 
-        <a href="data/high_point_template.csv" download>Download File</a>
+
+        
 
             
     </div>
