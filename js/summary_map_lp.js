@@ -8,7 +8,7 @@ function lp_map() {
     let path = d3.geoPath()
         .projection(projection);
 
-    console.log(mapData.features)
+
 
     
     // Add each state to the map

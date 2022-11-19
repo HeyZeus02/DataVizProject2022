@@ -6,6 +6,11 @@ let visited_highpoints; // Ths is a filtered list of only highpoints that the us
 let path1;
 let path2;
 let path3;
+let total_elevation;
+let feet_climbed;
+let year_elevations;
+let bar_xScale;
+let bar_yScale; 
 
 
 let headerData = [{sorted: false, ascending: false},  // used in sorting the table data

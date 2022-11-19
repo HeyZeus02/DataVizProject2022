@@ -63,6 +63,10 @@ function make_timeseries(){
             .attr('stroke', 'black');
         
         d3.select('#elevation_timeseries_op').select('#lines')
+            .selectAll('path')
+            .remove();
+            
+        d3.select('#elevation_timeseries_op').select('#lines')
             .append('path')
             .datum(line_data)
             .attr('d', lineGenerator)

@@ -79,33 +79,123 @@
     
     <div id = 'output_page' class="hidden">
 
-        <svg id="completed_map_op" width = '1000' height = '610'>
-            <g id="states"></g>
-            <g id="highpoints"></g>
+            <svg id="completed_map_op" width = '1600' height = '900' class = 'display_block'>
+                <g id="states"></g>
+                <g id="highpoints"></g>
+                <g id = 'pc_1_1'></g>
+                <g id = 'pc_1_2'></g>
+                <g id = 'pc_1_3'></g>
+                <g id = 'pc_2_1'></g>
+                <g id = 'pc_2_2'></g>
+                <g id = 'pc_2_3'></g>
+                <g id = 'pc_2_4'></g>
+                <g id = 'pc_2_5'></g>
+                <g id="completed_map_title_op">
+                    <text id = 'Visited_Highpoints' x="50%" y = 100 >Visited Highpoints</text>
+                </g>
+                <g id="state_output_op">
+                    <rect id ='click_state_op' width="500" height ="250" x = '1097' y ='647'></rect>
+                    <text id = 'state_info' x = 1350 y = 680 text-anchor = 'middle' font-size = '24px' text-decoration = 'underline'>State Information</text>
+                    <text id = 'state' x = 1350 y = 740 text-anchor = 'middle' font-size = '48px'></text>
+                    <text id = 'high_point' x = 1350 y = 780 text-anchor = 'middle' font-size = '30px'>Click on a state to view information.</text>
+                    <text id = 'elevation' x = 1350 y = 820 text-anchor = 'middle' font-size = '24px'></text>
+                    <text id = 'status' x = 1350 y = 858 text-anchor = 'middle' font-size = '24px'></text>
+
+                    
+
+                </g>
+            </svg>
+
+        <div>
+
+
+        </div>
+        <svg id = 'elevation_timeseries_title_op' width = '798' class = 'title_block'>
+            <g id="elevation_over_time_op">
+                <text id = 'Elevation_Over_Time' x="50%" y = 30 text-anchor = "middle" font-size = '24px'>Cumulative Elevation Over Time (ft/year)</text>
+            </g>  
         </svg>
-        <div class = 'row'>
-        <svg id = 'elevation_timeseries_op' width = '800' height = '400'>
+        <svg id ='barchart_per_year_title_op' width = '797' class = 'title_block'>
+            <g id="elevation_per_year_op">
+                <text id = 'Elevation_Per_Year' x="50%" y = 30 text-anchor = "middle" vertical-align="middle" font-size = '24px'>Elevation Per Year (ft/year)</text>
+            </g> 
+        </svg>
+        <div>
+        <svg id = 'elevation_timeseries_op' width = '798' height = '400'class = 'display_block'>
             <g id = 'elevations'></g>
             <g id = 'lines'></g> 
-            <g id = 'labels'></g>           
+            <g id = 'labels'></g>
+            <!-- <g id="elevation_over_time_op">
+                <text id = 'Elevation_Over_Time' x="50%" y = 30 text-anchor = "middle" font-size = '24px'>Cumulative Elevation Over Time (ft/year)</text>
+            </g>            -->
             <g id = 'e_x-axis'></g>
             <g id = 'e_y-axis'></g>
         </svg>
 
-        <svg id ='barchart_per_year_op' width = '800' height = '400'>
+        <svg id ='barchart_per_year_op' width = '797' height = '400'class = 'display_block'>
+            <g id = 'mean_line'></g>
             <g id = 'elevations'></g>
+            <!-- <g id="elevation_per_year_op">
+                <text id = 'Elevation_Per_Year' x="50%" y = 30 text-anchor = "middle" font-size = '24px'>Elevation Per Year (ft/year)</text>
+            </g>  -->
             <g id = 'b_x-axis'></g>
             <g id = 'b_y-axis'></g>
         </svg>
     </div>
-        <svg id = 'arrow_map_op' width ='800' height = '400'>
+    <div >
+        <svg id = 'arrow_map_title_op' width ='1200' class = 'title_block'>
+            <g id="path_op">
+                <text id = 'visit_path' x="50%" y = 30 text-anchor = "middle" font-size = '24px'>Order of Each Highpoint Visit</text>
+            </g> 
+        </svg>
+        <svg id = 'stats_title_op' width ='395' class = 'title_block' >
+            <text id = 'stats' x="50%" y = 30 text-anchor = "middle" font-size = '24px'>Visitor Statistics</text>
+        </svg>
+    </div>
+        <svg id = 'arrow_map_op' width ='1200' height = '800' class = 'display_block'>
+            <defs>
+                <marker
+                  id="arrow"
+                  markerUnits="strokeWidth"
+                  markerWidth="12"
+                  markerHeight="12"
+                  viewBox="0 0 12 12"
+                  refX="9"
+                  refY="6"
+                  orient="auto">
+                  <path d="M2,10 L6,6 L2,2 L2,2 L10,6" style="fill: #f00;" style="stroke: black"></path>
+                </marker>
+              </defs>
             <g id="states"></g>
             <g id="highpoints"></g>
             <g id="arrows"></g>
+            <!-- <g id="path_op">
+                <text id = 'visit_path' x="50%" y = 30 text-anchor = "middle" font-size = '24px'>Order of Each Highpoint Visit</text>
+            </g>  -->
+        </svg>
+        <svg id = 'stats_op' width ='395' height = '800'class = 'display_block'>
+            <g id="stats_g_op">
+                <!-- <text id = 'stats' x="50%" y = 30 text-anchor = "middle" font-size = '24px'>Visitor Statistics</text> -->
+                <text id = 'yearly_averages' x="50%" y = '75' text-anchor = "middle" font-size = '20px' text-decoration = 'underline'>Average Highpoints Visited per Year:</text>
+                <text id = 'by_state_average' x="50%" y = '110' text-anchor = "middle" font-size = '30px'>5</text>
+                <text id = 'by_state_expected_completion'  x="50%" y = 145 text-anchor = "middle" font-size = '20px'>At this rate, expected completion by:</text>
+                <text id = 'by_state_expected_completion_year' x="50%" y = 180 text-anchor = "middle" font-size = '30px'>2019</text>
+                <line x1 = '0' y1 ='225' x2 = '395' y2 = '225' stroke = 'green' stroke-width = '1px'></line>
+                <text id = 'yearly_averages' x="50%" y = '260' text-anchor = "middle" font-size = '20px' text-decoration = 'underline'>Average Feet of Elevation per Year:</text>
+                <text id = 'by_state_average' x="50%" y = '290' text-anchor = "middle" font-size = '30px'>2000</text>
+                <text id = 'by_state_expected_completion'  x="50%" y = 330 text-anchor = "middle" font-size = '20px'>At this rate, expected completion by:</text>
+                <text id = 'by_state_expected_completion_year' x="50%" y = 360 text-anchor = "middle" font-size = '30px'>2019</text>
+                <line x1 = '0' y1 ='405' x2 = '395' y2 = '405' stroke = 'green' stroke-width = '1px'></line>
+                <text id = 'yearly_averages' x="50%" y = '440' text-anchor = "middle" font-size = '20px' text-decoration = 'underline'>Highest Elevation Visited</text>
+                <text id = 'by_state_average' x="50%" y = '470' text-anchor = "middle" font-size = '30px'>Mount Ranieir</text>
+                <text id = 'by_state_expected_completion'  x="50%" y = '500' text-anchor = "middle" font-size = '30px'>Washington</text>
+                <text id = 'by_state_expected_completion_year' x="50%" y = '530' text-anchor = "middle" font-size = '25px'>20133 Feet</text>
+                <text id = 'by_state_expected_completion_year' x="50%" y = '555' text-anchor = "middle" font-size = '25px'>Visited on 12/5/19</text>
+
+            </g> 
         </svg>
 
-        <svg id ='state_pie_chart_op' width = '300' height = '300'></svg>
-        <svg id ='elevation_pie_chart_op' width = '300' height = '300'></svg>
+
 
         
     </div>
@@ -113,8 +203,14 @@
     <div id = 'tooltip' class = 'hidden'>
         <p id = 'p_state'></p>
         <p id = 'p_peak'></p>
-        <p id = 'p_elevation'></p>                
+        <p id = 'p_elevation'></p>
+        <p id = 'p_date'></p>                
     </div>
+
+
+
+    <span id = 'tooltiptext' class="tooltiptext"></span>
+    <span>&#9873;</span>
 
 
 
