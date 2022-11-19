@@ -63,10 +63,12 @@ function gen_arrow_map() {
             .attr("x2", d => projection([d.next_X, d.next_Y])[0])
             .attr("y2", d => projection([d.next_X, d.next_Y])[1])
             .attr("marker-end","url(#arrow)")
-            // .attr("stroke", function(d, i){return i%2 ==1 ? "url(#linear1)" :"url(#linear2)"})
             .attr('id', d => d.State.replace(' ','') + '_' + d.next_State.replace(' ',''))
             .attr('stroke','red')
             .attr('stroke-width', '4px');
+
+
+
 
             d3.select("#arrow_map_op").select('#arrows')
             .selectAll('line')
@@ -83,7 +85,7 @@ function gen_arrow_map() {
                 let selection = this.__data__
 
 
-                d3.select('#arrow_map_op').selectAll('path')
+                d3.select('#arrow_map_op').selectAll('.state')
                     .attr('opacity', .1)
 
                 d3.select('#arrow_map_op').selectAll('circle')
@@ -141,7 +143,7 @@ function gen_arrow_map() {
 
         if (state_list.includes(ss)){
 
-            d3.select('#arrow_map_op').selectAll('path')
+            d3.select('#arrow_map_op').selectAll('.state')
                 .attr('opacity', .1)
 
             d3.select('#arrow_map_op').selectAll('circle')

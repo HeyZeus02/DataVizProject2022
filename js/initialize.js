@@ -212,6 +212,7 @@ function handleFileLoad(event) {
     elevation_pie_chart_op();
     gen_bar_chart();
     gen_arrow_map();
+    generate_statistics();
 
     d3.select('#landing_page')
     .classed('hidden',true);

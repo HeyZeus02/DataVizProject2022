@@ -28,10 +28,10 @@
 
 
 /* These can be removed after styling and placement*/
-table, th, td {
+/* table, th, td {
     border: 1px solid;
     background-color:rgba(255, 255, 255, .8);
-}
+} */
 
 
 
@@ -139,14 +139,26 @@ html, body #tabsvg, #tabs{
     display: none;
 }
 
-.tooltip_arrow {
+
+
+#click_state_op {
+    stroke-width: 4px;
+    stroke: black;
+    fill: none;
+}
+
+#Visited_Highpoints {
+    text-anchor: middle;
+    font-size: 60px;
+}
+
+.tooltip {
     position: absolute;
-    /* display: inline-block; */
+    display: inline-block;
     border-bottom: 1px dotted black;
   }
   
-#tooltiptext {
-    visibility: visible;
+  .tooltiptext {
     width: 120px;
     background-color: black;
     color: #fff;
@@ -160,7 +172,7 @@ html, body #tabsvg, #tabs{
     margin-left: -60px;
   }
   
-  .tick .tooltiptext::after {
+  .tooltiptext::after {
     content: "";
     position: absolute;
     top: 100%;
@@ -171,17 +183,3 @@ html, body #tabsvg, #tabs{
     border-color: black transparent transparent transparent;
   }
   
-  .tick:hover .tooltiptext {
-    visibility: visible;
-  }
-
-#click_state_op {
-    stroke-width: 4px;
-    stroke: black;
-    fill: none;
-}
-
-#Visited_Highpoints {
-    text-anchor: middle;
-    font-size: 60px;
-}

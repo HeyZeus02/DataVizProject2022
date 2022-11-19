@@ -10,7 +10,8 @@ let total_elevation;
 let feet_climbed;
 let year_elevations;
 let bar_xScale;
-let bar_yScale; 
+let bar_yScale;
+let problems = [];
 
 
 let headerData = [{sorted: false, ascending: false},  // used in sorting the table data

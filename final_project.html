@@ -12,6 +12,7 @@
     <script src="https://d3js.org/topojson.v3.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     
+    <script src="js/statistics.js"></script>
     <script src="js/completed_map_op.js"></script>
     <script src="js/event_interactions.js"></script>
     <script src="js/arrow_map_op.js"></script>
@@ -39,11 +40,11 @@
     </div>
 
     <div id='landing_page' class = 'row'>
-        <svg id="summary_map_lp" width = '1000' height = '610'>
+        <svg id="summary_map_lp" width = '1000' height = '610' class = 'display_block'>
             <g id="states"></g>
             <g id="highpoints"></g>
         </svg>
-        <table id="summary_table_lp">
+        <table id="summary_table_lp" class = 'display_block'>
             <thead>
 
                 <th class="sortable">State<i class="fas no-display"></i></th>
@@ -84,39 +85,45 @@
                 <svg  width = '1200' height = '50' class = 'title_block'>
                     <text id = 'state_info' x = 50% y = 30 text-anchor = 'middle' font-size = '24px' >Visited Highpoints</text>
                 </svg>
-                <svg id="completed_map_op" width = '1200' height = '900' class = 'display_block'>
+                <svg id="completed_map_op" width = '1200' height = '910' class = 'display_block'>
                     <g id="states"></g>
                     <g id="highpoints"></g>
                 </svg>
             </div>
 
-            <div id = 'piechartdiv' class = 'chart'>
-                <svg  width = '400' height = '50' class = 'title_block'>
-                    <text id = 'state_info' x = 50% y = 30 text-anchor = 'middle' font-size = '24px' >Pie Charts</text>
-                </svg>
-                <svg  id = 'state_piechart_op' width = '400' height = '300' class = 'display_block'>
-                    <g id="highpoints"></g>
-                    <g id = 'pc_1_1'></g>
-                    <g id = 'pc_1_2'></g>
-                    <g id = 'pc_1_3'></g>
-                </svg>
+            <div class = 'chart'>
 
-                <svg  id = 'elevation_piechart_op' width = '400' height = '300' class = 'display_block'>
-                    <g id = 'pc_2_1'></g>
-                    <g id = 'pc_2_2'></g>
-                    <g id = 'pc_2_3'></g>
-                    <g id = 'pc_2_4'></g>
-                    <g id = 'pc_2_5'></g>
-                </svg>
-                <svg  width = '400' height = '50' class = 'title_block'>
-                    <text id = 'state_info' x = 50% y = 30 text-anchor = 'middle' font-size = '24px' >State Information</text>
-                </svg>
-                <svg  id="state_output_op" width = '400' height = '250' class = 'display_block' border = '1px'>
+                <div id = 'piechartdiv' class = 'chart'>
+                    <svg  width = '400' height = '50' class = 'title_block'>
+                        <text id = 'state_info' x = 50% y = 30 text-anchor = 'middle' font-size = '24px' >Pie Charts</text>
+                    </svg>
+                    <svg  id = 'state_piechart_op' width = '400' height = '300' class = 'display_block'>
+                        <g id="highpoints"></g>
+                        <g id = 'pc_1_1'></g>
+                        <g id = 'pc_1_2'></g>
+                        <g id = 'pc_1_3'></g>
+                    </svg>
+
+                    <svg  id = 'elevation_piechart_op' width = '400' height = '300' class = 'display_block'>
+                        <g id = 'pc_2_1'></g>
+                        <g id = 'pc_2_2'></g>
+                        <g id = 'pc_2_3'></g>
+                        <g id = 'pc_2_4'></g>
+                        <g id = 'pc_2_5'></g>
+                    </svg>
+                </div>    
+                <div class = 'chart'>
+                    <svg  width = '400' height = '50' class = 'title_block'>
+                        <text id = 'state_info' x = 50% y = 30 text-anchor = 'middle' font-size = '24px' >State Information</text>
+                    </svg>
+                
+                    <svg  id="state_output_op" width = '400' height = '250' class = 'display_block' border = '1px'>
                         <text id = 'state' x = 50% y = 70 text-anchor = 'middle' font-size = '48px'></text>
                         <text id = 'high_point' x = 50% y = 110 text-anchor = 'middle' font-size = '30px'></text>
                         <text id = 'elevation' x = 50% y = 150 text-anchor = 'middle' font-size = '24px'></text>
                         <text id = 'status' x = 50% y = 188 text-anchor = 'middle' font-size = '24px'></text>            
-                </svg>
+                    </svg>
+                </div>
             </div>
         </div>
         
@@ -137,7 +144,7 @@
                 </svg>
 
             </div>
-            <div class = 'chart'>
+            <div class = 'chart' position = 'absolute'>
                 <svg id ='barchart_per_year_title_op' width = '800' class = 'title_block'>
                     <g id="elevation_per_year_op">
                         <text id = 'Elevation_Per_Year' x="50%" y = 30 text-anchor = "middle" vertical-align="middle" font-size = '24px'>Elevation Per Year (ft/year)</text>
@@ -149,7 +156,11 @@
                     <g id = 'elevations'></g>
                     <g id = 'b_x-axis'></g>
                     <g id = 'b_y-axis'></g>
+
                 </svg>
+                <div class="tooltip">
+                    <span class="tooltiptext" visibility = 'hidden'>Tooltip text</span>
+                </div>
 
 
             </div>
@@ -191,20 +202,20 @@
                 <svg id = 'stats_op' width ='400' height = '800'class = 'display_block'>
                     <g id="stats_g_op">
                         <text id = 'yearly_averages' x="50%" y = '75' text-anchor = "middle" font-size = '20px' text-decoration = 'underline'>Average Highpoints Visited per Year:</text>
-                        <text id = 'by_state_average' x="50%" y = '110' text-anchor = "middle" font-size = '30px'>5</text>
+                        <text id = 'by_state_average' x="50%" y = '110' text-anchor = "middle" font-size = '30px'></text>
                         <text id = 'by_state_expected_completion'  x="50%" y = 145 text-anchor = "middle" font-size = '20px'>At this rate, expected completion by:</text>
-                        <text id = 'by_state_expected_completion_year' x="50%" y = 180 text-anchor = "middle" font-size = '30px'>2019</text>
+                        <text id = 'by_state_expected_completion_year' x="50%" y = 180 text-anchor = "middle" font-size = '30px'></text>
                         <line x1 = '0' y1 ='225' x2 = '395' y2 = '225' stroke = 'green' stroke-width = '1px'></line>
                         <text id = 'yearly_averages' x="50%" y = '260' text-anchor = "middle" font-size = '20px' text-decoration = 'underline'>Average Feet of Elevation per Year:</text>
-                        <text id = 'by_state_average' x="50%" y = '290' text-anchor = "middle" font-size = '30px'>2000</text>
+                        <text id = 'by_elevation_average' x="50%" y = '290' text-anchor = "middle" font-size = '30px'></text>
                         <text id = 'by_state_expected_completion'  x="50%" y = 330 text-anchor = "middle" font-size = '20px'>At this rate, expected completion by:</text>
-                        <text id = 'by_state_expected_completion_year' x="50%" y = 360 text-anchor = "middle" font-size = '30px'>2019</text>
+                        <text id = 'by_elevation_average_year' x="50%" y = 360 text-anchor = "middle" font-size = '30px'></text>
                         <line x1 = '0' y1 ='405' x2 = '395' y2 = '405' stroke = 'green' stroke-width = '1px'></line>
                         <text id = 'yearly_averages' x="50%" y = '440' text-anchor = "middle" font-size = '20px' text-decoration = 'underline'>Highest Elevation Visited</text>
-                        <text id = 'by_state_average' x="50%" y = '470' text-anchor = "middle" font-size = '30px'>Mount Ranieir</text>
-                        <text id = 'by_state_expected_completion'  x="50%" y = '500' text-anchor = "middle" font-size = '30px'>Washington</text>
-                        <text id = 'by_state_expected_completion_year' x="50%" y = '530' text-anchor = "middle" font-size = '25px'>20133 Feet</text>
-                        <text id = 'by_state_expected_completion_year' x="50%" y = '555' text-anchor = "middle" font-size = '25px'>Visited on 12/5/19</text>
+                        <text id = 'by_state_average' x="50%" y = '470' text-anchor = "middle" font-size = '30px'></text>
+                        <text id = 'by_state_expected_completion'  x="50%" y = '500' text-anchor = "middle" font-size = '30px'></text>
+                        <text id = 'by_state_expected_completion_year' x="50%" y = '530' text-anchor = "middle" font-size = '25px'></text>
+                        <text id = 'by_state_expected_completion_year' x="50%" y = '555' text-anchor = "middle" font-size = '25px'></text>
                     </g> 
                 </svg>
             </div>      
@@ -221,8 +232,10 @@
 
 
 
-        <span id = 'tooltiptext' class="tooltiptext"></span>
-        <span>&#9873;</span>
+        <!-- <div class="tooltip">
+            <span class="tooltiptext">Tooltip text</span>
+        </div> -->
+
 
 
 
