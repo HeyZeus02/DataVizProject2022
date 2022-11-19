@@ -4,8 +4,8 @@ function state_pie_chart_op() {
 
     let width = 300;
     let height = 300;
-    let svg_x = 1400;
-    let svg_y = 175;
+    let svg_x = 200;
+    let svg_y = 150;
     let radius = Math.min(width, height) / 2 - 10;
 
 
@@ -32,7 +32,7 @@ function state_pie_chart_op() {
 
 
     // Create a group element:
-    let groups = d3.select('#completed_map_op')
+    let groups = d3.select('#state_piechart_op')
         .selectAll(".pc_1_slices_g")
         .data(pieData)
         .join("g")
@@ -49,7 +49,7 @@ function state_pie_chart_op() {
 
     let state_text = visited_highpoints.length+' of 50'
     
-    d3.select('#completed_map_op')
+    d3.select('#state_piechart_op')
         .select('#pc_1_1')
         .attr("transform", "translate(" + svg_x+ "," + (svg_y- 20) + ")")
         .selectAll('text')
@@ -59,7 +59,7 @@ function state_pie_chart_op() {
         .attr('text-anchor','middle')
         .attr('font-size', '40px');
 
-    d3.select('#completed_map_op')
+    d3.select('#state_piechart_op')
         .select('#pc_1_2')
         .attr("transform", "translate(" + svg_x+ "," + (svg_y + 10) + ")")
         .selectAll('text')
@@ -69,7 +69,7 @@ function state_pie_chart_op() {
         .attr('text-anchor','middle')
         .attr('font-size', '20px'); 
         
-    d3.select('#completed_map_op')
+    d3.select('#state_piechart_op')
         .select('#pc_1_3')
         .attr("transform", "translate(" + svg_x+ "," + (svg_y + 60) + ")")
         .selectAll('text')
@@ -92,8 +92,8 @@ function elevation_pie_chart_op() {
 
     let width = 300;
     let height = 300;
-    let svg_x = 1400;
-    let svg_y = 475;
+    let svg_x = 200;
+    let svg_y = 150;
     let radius = Math.min(width, height) / 2 - 10;
 
 
@@ -121,7 +121,7 @@ function elevation_pie_chart_op() {
 
 
     // Create a group element:
-    let groups = d3.select('#completed_map_op')
+    let groups = d3.select('#elevation_piechart_op')
         .selectAll(".pc_2_slices_g")
         .data(pieData)
         .join("g")
@@ -143,7 +143,7 @@ function elevation_pie_chart_op() {
 
     let elevation_text = feet_climbed +'/' + total_elevation;
 
-    d3.select('#completed_map_op')
+    d3.select('#elevation_piechart_op')
     .select('#pc_2_1')
     .attr("transform", "translate(" + svg_x + "," + (svg_y - 40) + ")")
     .selectAll('text')
@@ -153,7 +153,7 @@ function elevation_pie_chart_op() {
     .attr('text-anchor','middle')
     .attr('font-size', '40px');
 
-    d3.select('#completed_map_op')
+    d3.select('#elevation_piechart_op')
     .select('#pc_2_2')
     .attr("transform", "translate(" + svg_x + "," + (svg_y - 0) + ")")
     .selectAll('text')
@@ -163,7 +163,7 @@ function elevation_pie_chart_op() {
     .attr('text-anchor','middle')
     .attr('font-size', '40px');
 
-d3.select('#completed_map_op')
+d3.select('#elevation_piechart_op')
     .select('#pc_2_3')
     .attr("transform", "translate(" + svg_x + "," + (svg_y +20) + ")")
     .selectAll('text')
@@ -173,7 +173,7 @@ d3.select('#completed_map_op')
     .attr('text-anchor','middle')
     .attr('font-size', '20px');  
     
-d3.select('#completed_map_op')
+d3.select('#elevation_piechart_op')
     .select('#pc_2_4')
     .attr("transform", "translate(" + svg_x+ "," + (svg_y + 40) + ")")
     .selectAll('text')
@@ -183,7 +183,7 @@ d3.select('#completed_map_op')
     .attr('text-anchor','middle')
     .attr('font-size', '20px');  
 
-    d3.select('#completed_map_op')
+    d3.select('#elevation_piechart_op')
     .select('#pc_2_5')
     .attr("transform", "translate(" + svg_x + "," + (svg_y + 80) + ")")
     .selectAll('text')

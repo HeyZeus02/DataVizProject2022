@@ -1,7 +1,7 @@
 function draw_completed_map() {
 
     // Set up the map projection
-    const projection = d3.geoAlbersUsa().scale(1600).translate([650, 500])
+    const projection = d3.geoAlbersUsa().scale(1500).translate([650, 450])
     
     // Set the projection to the path  
     let path = d3.geoPath()

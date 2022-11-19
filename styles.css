@@ -5,11 +5,23 @@
     justify-content: center;
 }
 
-#piechartdiv {
-    width: 300px;
-    background-color: rgba(255, 255, 255, .8);
+/* #piechartdiv {
+
     display: flex;
     flex-direction: column;
+    justify-content: center;
+} */
+
+.chart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5px;
+}
+
+.top_row {
+    display: flex;
+    margin: 5px;
     justify-content: center;
 }
 
