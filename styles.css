@@ -47,7 +47,6 @@ html, body #tabsvg, #tabs{
 
 
 #landing_page{
-    background-color: #95DBE5FF;
     padding-top:25px;
     padding-bottom:25px;
     text-align: center;
@@ -55,12 +54,34 @@ html, body #tabsvg, #tabs{
     
 }
 
+.lp_color {
+    background-color: #177e89;
+}
+.lp_tab_color {
+    fill: #177e89;
+}
+
+.ip_color {
+    background-color: #084c61;
+}
+.ip_tab_color {
+    fill: #084c61;
+}
+
+.op_color {
+    background-color: #339E66FF;
+
+}
+.op_tab_color {
+    fill: #339E66FF; 
+}
+
 #landing_page.hidden{
     display: none;
 }
 
 #input_page{
-    background-color: #078282FF;
+    /* background-color: #078282FF; */
     padding-top:25px;
     padding-bottom:25px;
     text-align: center;
@@ -73,7 +94,7 @@ html, body #tabsvg, #tabs{
 }
 
 #output_page{
-    background-color: #339E66FF;
+    /* background-color: #339E66FF; */
     padding-top:25px;
     padding-bottom:25px;
     text-align: center;
@@ -164,6 +185,16 @@ html, body #tabsvg, #tabs{
 
 .step4{
     height: 200px;
+}
+.info_block{
+    height: 200px;
+    line-height: 2px;
+}
+
+.welcome_block{
+    height: 200px;
+    line-height: 24px;
+    font-size:24px;
 }
 
 

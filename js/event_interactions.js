@@ -101,64 +101,64 @@ function completed_states() {
 }// end of completed_states
 
 
-function highlight_table() {
+// function highlight_table() {
     
    
 
-    // Select the hovered over state
-    let state_name = this.__data__.properties.name
+//     // Select the hovered over state
+//     let state_name = this.__data__.properties.name
 
 
 
-    d3.select(`#${state_name}_tr`)
-        .style('background-color', 'black');
+//     d3.select(`#${state_name}_tr`)
+//         .style('background-color', 'black');
 
-    //When not on in state
-    d3.select("#summary_map_lp")
-        .select('#states')
-        .selectAll("path")
-        .on('mouseout', function(d){
+//     //When not on in state
+//     d3.select("#summary_map_lp")
+//         .select('#states')
+//         .selectAll("path")
+//         .on('mouseout', function(d){
 
-            let state_name = this.__data__.properties.name
+//             let state_name = this.__data__.properties.name
 
 
-        d3.select(`#${state_name}_tr`)
-        .style('background-color', 'rgba(255, 255, 255, .8)');
+//         d3.select(`#${state_name}_tr`)
+//         .style('background-color', 'rgba(255, 255, 255, .8)');
 
-        });
+//         });
         
   
    
-}// end of highlight_table
+// }// end of highlight_table
 
-function highlight_states() {
+// function highlight_states() {
    
 
-    // Select the hovered over state
-    let row_state = this.id.replace('_tr','')
+//     // Select the hovered over state
+//     let row_state = this.id.replace('_tr','')
 
 
 
 
-    d3.select('#states')
-    .select(`#${row_state}`)
-        .style('fill', 'rgba(0, 0, 0, .1)');
+//     d3.select('#states')
+//     .select(`#${row_state}`)
+//         .style('fill', 'rgba(0, 0, 0, .1)');
 
-    //When not on row
-    d3.selectAll("tr")
-        .on('mouseout', function(d){
+//     //When not on row
+//     d3.selectAll("tr")
+//         .on('mouseout', function(d){
 
-            let row_state = this.id.replace('_tr','')
+//             let row_state = this.id.replace('_tr','')
 
 
-        d3.select(`#${row_state}`)
-        .style('fill', 'rgba(255, 255, 255, .8)');
+//         d3.select(`#${row_state}`)
+//         .style('fill', 'rgba(255, 255, 255, .8)');
 
-        });
+//         });
         
   
    
-}// end of highlight_states
+// }// end of highlight_states
 
 function barchart_tooltip() {
 
@@ -209,61 +209,7 @@ function barchart_tooltip() {
         
   
    
-}// 
-
-
-   
-
-//     // Select the hovered over state
-//     let mean_data = this.__data__;
-
-//     console.log('hello');
-
-//     // change the line width
-//     d3.select(this)
-//         .attr('stroke','red')
-//         .attr('stroke-width', '3px');
-
-//     // Unhide and position the tooltip. change the first line of text and color to match the given circle
-//     d3.select('#tooltip')
-//         .classed('hidden', false)
-//         .style('left', event.pageX +5 + 'px')
-//         .style('top', event.pageY+ 5 + 'px')
-//         .style('border-color', 'black')
-//         .select('#p_state')
-//         .text('Mean Line');
-
-//     // Change the 2nd line of text to match the hovered circle
-//     d3.select('#tooltip')
-//         .select('#p_peak')
-//         .text(`${this} Feet per Year`);
-
-//     // Change the third line of text to match the hovered circle
-//     d3.select('#tooltip')
-//         .select('#p_elevation')
-//         .text(`At this rate, expected completion in the year ${this}`);
-
-
-
-
-//     // When not on circle put the tool tip and circle back to the way before
-//     d3.select('#barchart_per_year_op')
-//         .select('#mean_line')
-//         .selectAll('line')
-//         .on('mouseout', function(d){
-
-//             // Change the line weight of circle back
-//             d3.select(this).attr('stroke-width', '1px');
-
-//             // Hide the tooltip
-//             d3.select('#tooltip').classed('hidden',true);
-
-//         });
-        
-  
-   
-// }// 
-
+}
 
 function year_tooltip() {
 
@@ -281,82 +227,69 @@ function year_tooltip() {
         .attr('class','tooltiptext')
         .text('5000');
 
-//     let svg = document.getElementById('barchart_per_year_op');
-//     let pt = svg.createSVGPoint();
-//     pt.x = screenXPosWithinSVG;
-//     pt.y = screenYPosWithinSVG;
 
-
-// // Transform it back to SVG coordinate space
-//     let  svgCoord = pt.matrixTransform(svg.getCTM().inverse());
-
-// // Place tooltip at (svgCoord.x, svgCoord.y)
-
-//     let MARGIN = 20;
-//     let barchart_element = document.getElementById("b_x-axis"); // barchart element
-//     let x_bounding = barchart_element.getBoundingClientRect(); // bounding rectangle of barchart svg
-//     let bound_left = x_bounding.x; // position of barchart svg
-//     let bound_top = x_bounding.y; //position of barchart svg
-
-//     console.log(bound_left);
-
-//     console.log(d3.select(this).style('left'));
-
-
-
-
-//     // Select the hovered over year
-//     let year_selection = d3.select(this).select('text').data()[0];
-//     console.log(year_selection);
-//     let elevation_selection = year_elevations.filter(d => d.year === year_selection);
-//     if (elevation_selection.length == 0){
-//         elevation_selection = 0;
-//     }
-//     else {
-//          elevation_selection = elevation_selection[0].cum_elevation;
-//         }
-//     console.log(elevation_selection);
-//     // change the line width of the circle
-//     d3.select(this)
-//         .attr('font', '3px');
-
-//     // Unhide and position the tooltip. change the first line of text and color to match the given circle
-//     d3.select('.tooltip_arrow')
-//         .classed('hidden', false)
-//         .style('left', bound_left + 'px')
-//         .style('top', bound_top + 'px');
-//         // .style('left', bound_left + MARGIN*3 + bar_xScale(year_selection)  + 'px')
-//         // .style('top', bound_top + (MARGIN + bar_yScale(elevation_selection)) + 'px')
-
-
-//     d3.select('#tooltiptext')
-//         .text(year_selection);
-
-//     // // Change the 2nd line of text to match the hovered circle
-//     // d3.select('#tooltip')
-//     //     .select('#p_peak')
-//     //     .text();
-
-//     // // Change the third line of text to match the hovered circle
-//     // d3.select('#tooltip')
-//     //     .select('#p_elevation')
-//     //     .text();
-
-
-
-
-//     // When not on circle put the tool tip and circle back to the way before
-//     d3.select('#barchart_per_year_op')
-//         .select('#elevations')
-//         .selectAll('rect')
-//         .on('mouseout', function(d){
-
-//             // Change the line weight of circle back
-//             d3.select(this).attr('stroke-width', '1px');
-
-//             // Hide the tooltip
-//             d3.select('#tooltip').classed('hidden',true);
-
-//         });
 
 }
+
+function update_landing_page_info(){
+
+    if (this.id != '') {
+        // Calculate the values to fill the selected highpoint info box on the landing page
+        let state_name = this.id.replace('_tr','')
+        state_name = state_name.replace('_',' ')
+        let state_peak = high_points.filter(x => x.State == state_name)[0].Peak
+        let state_elevation = high_points.filter(x => x.State == state_name)[0].Elevation +' ft'
+        let state_wiki = high_points.filter(x => x.State == state_name)[0].Wiki
+
+        // Set the stroke width of all the states back to 1 px
+        d3.select("#summary_map_lp")
+            .select('#states')
+            .selectAll("path")
+            .attr('stroke-width', '1px')
+
+        // Set the stroke width of all table rows back to nothing
+        d3.select("#predictionTableBody")
+            .selectAll("tr")
+            .style('background-color', 'transparent');
+
+
+
+
+        d3.select("#" + state_name.replace(' ','_') + "_tr")
+            .style('background-color', 'rgba(255, 255, 255, .8)');
+
+
+        // Set the stroke width of  the current state to 3px
+        d3.select("#summary_map_lp")
+            .select('#states')
+            .select("#" + state_name.replace(' ','_'))
+            .attr('stroke-width', '3px')
+
+
+
+
+
+        // Set the state to be selected state in selected highpoint info box
+        d3.select('#high_point_info_lp')
+            .select('#state')
+            .text(state_name);
+
+        // Set the elevation to be selected state in selected highpoint info box
+        d3.select('#high_point_info_lp')
+            .select('#high_point')
+            .text(state_peak);
+
+        // Set the elevation to be selected state in selected highpoint info box
+        d3.select('#high_point_info_lp')
+            .select('#elevation')
+            .text(state_elevation);
+
+        // Set the correct wikipedia link
+        d3.select('#high_point_info_lp')
+                .select('#wiki_link')
+                .attr('href',state_wiki)
+                .text('Wiki Entry');
+    }
+
+}
+

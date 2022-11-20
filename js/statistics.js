@@ -19,6 +19,16 @@ function generate_statistics(){
     let highest_elevation_visited = visited_highpoints.filter(d => d.Elevation == d3.max(visited_highpoints.map(d => d.Elevation)))
     console.log(highest_elevation_visited)
 
+    d3.select('#stats_g_op').select('#he_state')
+        .text(highest_elevation_visited[0].State)
+
+    d3.select('#stats_g_op').select('#he_peak')
+        .text(highest_elevation_visited[0].Peak)
+    
+    d3.select('#stats_g_op').select('#he_elevation')
+        .text(highest_elevation_visited[0].Elevation + 'ft')
+
+
 
 
 }

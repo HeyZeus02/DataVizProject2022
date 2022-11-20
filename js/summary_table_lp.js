@@ -25,7 +25,7 @@ function lp_table() {
         .selectAll('tr')
         .data(table_data)
         .join('tr')
-        .attr('id',d => d.state + '_tr');
+        .attr('id',d => d.state.replace(' ','_') + '_tr');
 
     // Add Cells
     rowSelection.selectAll("td")
@@ -79,8 +79,14 @@ function lp_table() {
 
     });
 
+    // d3.selectAll("tr")
+    // .on('mouseover', highlight_states);
+
     d3.selectAll("tr")
-    .on('mouseover', highlight_states);
+        .on('click', update_landing_page_info);
+
+    d3.selectAll('tr')
+        .style('background-color', 'transparent');
     
     
 } // end of lp_table()

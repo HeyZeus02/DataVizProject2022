@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 
-<head>
+<head >
     <meta charset="UTF-8">
     <title>State Highpoint Visualization</title>
 
@@ -39,26 +39,79 @@
         </svg>
     </div>
 
-    <div id='landing_page' class = 'row'>
-        <svg id="summary_map_lp" width = '1000' height = '610' class = 'display_block'>
-            <g id="states"></g>
-            <g id="highpoints"></g>
-        </svg>
-        <table id="summary_table_lp" class = 'display_block'>
-            <thead>
+    <div id='landing_page' class = 'row lp_color'>
+        <div class = 'top_row'>
+            <div>
+                <div class = 'chart'>
+                    <div  width = '1000' class = 'title_block' style = 'font-size: 24px' style = 'margin: auto'>
+                        <text id = 'state_info' x = 50% y = 30 text-anchor = 'middle' font-size = '24px' >Welcome</text>
+                    </div>     
+                    <div id="welcome_lp" width = '1000' height = '200' class = 'display_block welcome_block' text-allign = 'center'>
+                        <p>Welcome Highpointers!<br> 
+                            This is a site to plan and analyze your your quest to visit all the highpoints in the United States.<br><br>
+                            Explore this overview page.<br>
+                            Import your own highpoint data into the input page.<br>
+                            View personalized visualiztions of your highpointing journey!
+                        </p>
+                    </div>
+                </div>
 
-                <th class="sortable">State<i class="fas no-display"></i></th>
-                <th class="sortable">Peak<i class="fas no-display"></i></th>
-                <th class="sortable">Elevation<i class="fas no-display"></i></th>
-                <th class="sortable">Elevation Display<i class="fas no-display"></i></th>
+                <div class = 'chart'>
+                    <svg  width = '1020' class = 'title_block'>
+                        <text id = 'state_info' x = 50% y = 30 text-anchor = 'middle' font-size = '24px' >Highpoint Map</text>
+                    </svg>     
+                    <svg id="summary_map_lp" width = '1020' height = '610' class = 'display_block'>
+                        <g id="states"></g>
+                        <g id="highpoints"></g>
+                    </svg>
+                </div>
+
+                <div class = 'top_row'>
+                    <div class = 'chart'>
+                        <svg  width = '600' class = 'title_block'>
+                            <text id = 'state_info' x = 50% y = 30 text-anchor = 'middle' font-size = '24px' >Statistics of Interest</text>
+                        </svg>     
+                        <svg id="welcome_lp" width = '600' height = '200' class = 'display_block'>
+                            <text>Welcome to our site! This text will be updated</text>
+                        </svg>
+                    </div>
+                    <div class = 'chart'>
+                        <svg  width = '400' class = 'title_block'>
+                            <text id = 'state_info' x = 50% y = 30 text-anchor = 'middle' font-size = '24px' >Selected Highpoint Info</text>
+                        </svg>     
+                        <div id="high_point_info_lp" width = '400' height = '200' class = 'display_block info_block'>
+                            <p id = 'state'  style="font-size:48px"></p>
+                            <p id = 'high_point' x = 50% y = 110 text-anchor = 'middle' style="font-size:30px"></p>
+                            <p id = 'elevation' x = 50% y = 150 text-anchor = 'middle' style="font-size:24px"></p>
+                            <a  style="font-size:24px" href = ''  id = 'wiki_link'></a>
+                        </div>
+                    </div>
 
 
-            </thead>
-            <tbody id="predictionTableBody">
+                </div>
 
-            </tbody>
-        </table>
 
+
+
+
+            </div>
+
+            <div class = 'chart'>
+                <svg  width = '600' class = 'title_block'>
+                    <text id = 'state_info' x = 50% y = 30 text-anchor = 'middle' font-size = '24px' >Summary Table</text>
+                </svg>     
+    
+                <table id="summary_table_lp" class = 'display_block'>
+                    <thead id = 'table_head'>
+                        <th class="sortable">State<i class="fas no-display"></i></th>
+                        <th class="sortable">Peak<i class="fas no-display"></i></th>
+                        <th class="sortable">Elevation<i class="fas no-display"></i></th>
+                        <th class="sortable">Elevation Display<i class="fas no-display"></i></th>
+                    </thead>
+                    <tbody id="predictionTableBody"></tbody>
+                </table>
+            </div>
+        </div>
         
     </div>
 
@@ -67,7 +120,7 @@
     
     
     
-    <div id = 'input_page' class = 'hidden'>
+    <div id = 'input_page' class = 'hidden ip_color'>
         <div class = 'row'>
             <div id = 'step1' class = 'chart'>
                 <svg class = 'title_block' width = '1200'>
@@ -125,7 +178,7 @@
     </div>
     
     
-    <div id = 'output_page' class="hidden">
+    <div id = 'output_page' class="hidden op_color">
         <div class = 'top_row'>
             <div class = 'chart'>
                 <svg  width = '1200' height = '50' class = 'title_block'>
@@ -258,10 +311,10 @@
                         <text id = 'by_elevation_average_year' x="50%" y = 360 text-anchor = "middle" font-size = '30px'></text>
                         <line x1 = '0' y1 ='405' x2 = '395' y2 = '405' stroke = 'green' stroke-width = '1px'></line>
                         <text id = 'yearly_averages' x="50%" y = '440' text-anchor = "middle" font-size = '20px' text-decoration = 'underline'>Highest Elevation Visited</text>
-                        <text id = 'by_state_average' x="50%" y = '470' text-anchor = "middle" font-size = '30px'></text>
-                        <text id = 'by_state_expected_completion'  x="50%" y = '500' text-anchor = "middle" font-size = '30px'></text>
-                        <text id = 'by_state_expected_completion_year' x="50%" y = '530' text-anchor = "middle" font-size = '25px'></text>
-                        <text id = 'by_state_expected_completion_year' x="50%" y = '555' text-anchor = "middle" font-size = '25px'></text>
+                        <text id = 'he_state' x="50%" y = '470' text-anchor = "middle" font-size = '30px'></text>
+                        <text id = 'he_peak'  x="50%" y = '500' text-anchor = "middle" font-size = '30px'></text>
+                        <text id = 'he_elevation' x="50%" y = '530' text-anchor = "middle" font-size = '25px'></text>
+                        
                     </g> 
                 </svg>
             </div>      

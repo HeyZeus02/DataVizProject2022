@@ -30,7 +30,7 @@ function create_tabs(){
     d3.select('#tab3')
         .append('path')
         .attr('transform', `translate(250,50),scale(0.25)`) 
-        .attr('fill', '#339E66FF')
+        .attr('class', 'op_tab_color')
         .attr('stroke-width', 1)
         .attr('stroke', 'black')
         .attr('d', path3);
@@ -66,7 +66,7 @@ function create_tabs(){
     d3.select('#tab2')
         .append('path')
         .attr('transform', `translate(25,-345),scale(0.25)`)
-        .attr('fill', '#078282FF')
+        .attr('class', 'ip_tab_color')
         .attr('stroke-width', 1)
         .attr('stroke', 'black')
         .attr('d', path2);
@@ -101,7 +101,7 @@ function create_tabs(){
     d3.select('#tab1')
         .append('path')
         .attr('transform', `translate(-200,-185),scale(0.25)`)
-        .attr('fill', '#95DBE5FF')
+        .attr('class', 'lp_tab_color')
         .attr('stroke-width', 1)
         .attr('stroke', 'black')
         .attr('d', path1);
@@ -137,7 +137,7 @@ function create_tabs(){
     // Add in the title
     d3.select('#Title')
         .append('text')
-        .text('United States High Point Visualization')
+        .text('United States Highpoint Visualization')
         .attr('text-anchor', middle_screen < 1200 ?  'left' :  'middle') // If widescreen it centers titled. If not, it makes sure it doesnt overlap tabs
         .attr('x',  middle_screen < 1200 ?  800 :  middle_screen) // If widescreen it centers titled. If not, it makes sure it doesnt overlap tabs
         .attr('y', 180)
@@ -249,7 +249,7 @@ function on_tab_click() {
                 .attr('id','tab1')
                 .append('path')
                 .attr('transform', `translate(-200,-185),scale(0.25)`)
-                .attr('fill', '#95DBE5FF')
+                .attr('class', 'lp_tab_color')
                 .attr('stroke-width', 1)
                 .attr('stroke', 'black')
                 .attr('d', path1);
@@ -287,7 +287,7 @@ function on_tab_click() {
                 .attr('id','tab2')
                 .append('path')
                 .attr('transform', `translate(25,-345),scale(0.25)`)
-                .attr('fill', '#078282FF')
+                .attr('class', 'ip_tab_color')
                 .attr('stroke-width', 1)
                 .attr('stroke', 'black')
                 .attr('d', path2);
@@ -319,7 +319,7 @@ function on_tab_click() {
                 .attr('id','tab3')
                 .append('path')
                 .attr('transform', `translate(250,50),scale(0.25)`) 
-                .attr('fill', '#339E66FF')
+                .attr('class', 'op_tab_color')
                 .attr('stroke-width', 1)
                 .attr('stroke', 'black')
                 .attr('d', path3);
