@@ -97,8 +97,9 @@ function gen_bar_chart() {
       .attr("y", d => bar_yScale(d.y_value))
       .attr("width", (CHART_WIDTH-MARGIN)/num_ticks - 6 )
       .attr("height", d => CHART_HEIGHT - bar_yScale(d.Elevation) -MARGIN -MARGIN)
-      .attr('fill', 'white')
-      .attr('stroke','black');
+    //   .attr('fill', 'white')
+    //   .attr('stroke','black');
+      .attr('class', 'op_elev_blocks');
 
     d3.select('#barchart_per_year_op')
         .select('#elevations')

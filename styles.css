@@ -66,7 +66,7 @@
 html, body #tabsvg, #tabs{
     width: 100%;
     height: 200px;
-    background-color: #7bd0e4;
+    background-color: #a2d3de;
     gap: 0px;
   }
 
@@ -96,35 +96,24 @@ html, body #tabsvg, #tabs{
     border: 3px solid black;   
 }
 
-.op_state_unselected {
-    fill: white;
-    stroke-width: 1px;
-}
 
-.op_state_selected {
-    fill: steelblue;
-    stroke-width: 3px;
-}
 
-.op_pie_not_visited {
-    fill: white;
-    stroke-width: 1px;
+.op_elev_blocks {
+    fill: #339E66FF;
     stroke: black;
 }
 
-.op_pie_visited {
-    fill: steelblue;
-    stroke-width: 1px;
-    stroke: black;
+.arrow_state{
+    stroke:black;
+    fill: white;
 }
 
-.op_pie_selected {
-    stroke-width: 3px;
+.arrows {
+    stroke:red;
+    stroke-width:4px;
 }
 
-.op_pie_unselected {
-    stroke-width: 1px;
-}
+
 
 
 /* end of color selection*/
