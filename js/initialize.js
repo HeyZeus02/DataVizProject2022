@@ -222,6 +222,25 @@ function handleFileLoad(event) {
 
     d3.select('#output_page')
     .classed('hidden',false);
+
+    d3.select('#tabsvg')
+        .select('#tab3')
+        .remove();
+
+    d3.select('#tabsvg')
+        .append('g')
+        .attr('id','tab3')
+        .append('path')
+        .attr('transform', `translate(250,50),scale(0.25)`) 
+        .attr('class', 'op_tab_color')
+        .attr('stroke-width', 1)
+        .attr('stroke', 'black')
+        .attr('d', path3);
+
+    d3.select('#tab3')
+        .append('text')
+        .text('OUTPUT PAGE')
+        .attr('transform', `translate(470,185)`);
     
 } // end of fileFileLoad() 
 
@@ -259,9 +278,8 @@ function on_tab_click() {
                 .text('OVERVIEW')
                 .attr('transform', `translate(65,185)`);
 
-            d3.select('#cover')
-                .attr('left','-800px')
-                .attr('top','100px')
+
+
 
             
 

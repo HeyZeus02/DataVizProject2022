@@ -50,6 +50,7 @@ loadData().then((loadedData) => {
     lp_map();
     lp_table();
     sort_data();
+    // compare_heights();
 
     
 

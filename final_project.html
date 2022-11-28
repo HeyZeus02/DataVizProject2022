@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     
     <script src="js/statistics.js"></script>
+    <script src="js/height_comparison_lp.js"></script>
     <script src="js/completed_map_op.js"></script>
     <script src="js/event_interactions.js"></script>
     <script src="js/arrow_map_op.js"></script>
@@ -42,44 +43,49 @@
     <div id='landing_page' class = 'row lp_color'>
         <div class = 'top_row'>
             <div>
-                <div class = 'chart'>
-                    <div  width = '1000' class = 'title_block' style = 'font-size: 24px' style = 'margin: auto'>
-                        <text id = 'state_info' x = 50% y = 30 text-anchor = 'middle' font-size = '24px' >Welcome</text>
-                    </div>     
-                    <div id="welcome_lp" width = '1000' height = '200' class = 'display_block welcome_block' text-allign = 'center'>
-                        <p>Welcome Highpointers!<br> 
-                            This is a site to plan and analyze your your quest to visit all the highpoints in the United States.<br><br>
-                            Explore this overview page.<br>
-                            Import your own highpoint data into the input page.<br>
-                            View personalized visualiztions of your highpointing journey!
-                        </p>
+                <div class = 'top_row'>   
+                    <div class = 'chart'>
+                        <svg  width = '1020' class = 'title_block' style = 'font-size: 24px' style = 'margin: auto'>
+                            <text id = 'state_info' x = 50% y = 30 text-anchor = 'middle' font-size = '24px' >Welcome</text>
+                        </svg>     
+                        <div id="welcome_lp" width = '1020' height = '200' class = 'display_block welcome_block' text-allign = 'center'>
+                            <p>Welcome Highpointers!<br> 
+                                This is a site to plan and analyze your your quest to visit all the highpoints in the United States.<br><br>
+                                Explore this overview page.<br>
+                                Import your own highpoint data into the input page.<br>
+                                View personalized visualiztions of your highpointing journey!
+                            </p>
+                        </div>
                     </div>
-                </div>
-
-                <div class = 'chart'>
-                    <svg  width = '1020' class = 'title_block'>
-                        <text id = 'state_info' x = 50% y = 30 text-anchor = 'middle' font-size = '24px' >Highpoint Map</text>
-                    </svg>     
-                    <svg id="summary_map_lp" width = '1020' height = '610' class = 'display_block'>
-                        <g id="states"></g>
-                        <g id="highpoints"></g>
-                    </svg>
-                </div>
+                </div> 
 
                 <div class = 'top_row'>
                     <div class = 'chart'>
-                        <svg  width = '600' class = 'title_block'>
-                            <text id = 'state_info' x = 50% y = 30 text-anchor = 'middle' font-size = '24px' >Statistics of Interest</text>
+                        <svg  width = '1020' class = 'title_block'>
+                            <text id = 'state_info' x = 50% y = 30 text-anchor = 'middle' font-size = '24px' >Highpoint Map</text>
                         </svg>     
-                        <svg id="welcome_lp" width = '600' height = '200' class = 'display_block'>
-                            <text>Welcome to our site! This text will be updated</text>
+                        <svg id="summary_map_lp" width = '1020' height = '610' class = 'display_block'>
+                            <g id="states"></g>
+                            <g id="highpoints"></g>
                         </svg>
                     </div>
+                </div>
+
+                <div class = 'top_row'>
+                    <!-- <div class = 'chart'>
+                        <svg  width = '600' class = 'title_block'>
+                            <text id = 'state_info' x = 50% y = 30 text-anchor = 'middle' font-size = '24px' >Peak Overlay</text>
+                        </svg>     
+                        <svg id="compare_height_lp" width = '600' height = '220' class = 'display_block'>
+                            <g id = 'height_axis'></g>
+                            <g id = 'mountains'></g>
+                        </svg>
+                    </div> -->
                     <div class = 'chart'>
-                        <svg  width = '400' class = 'title_block'>
+                        <svg  width = '1020' class = 'title_block'>
                             <text id = 'state_info' x = 50% y = 30 text-anchor = 'middle' font-size = '24px' >Selected Highpoint Info</text>
                         </svg>     
-                        <div id="high_point_info_lp" width = '400' height = '200' class = 'display_block info_block'>
+                        <div id="high_point_info_lp" width = '1020' height = '200' class = 'display_block info_block'>
                             <p id = 'state'  style="font-size:48px"></p>
                             <p id = 'high_point' x = 50% y = 110 text-anchor = 'middle' style="font-size:30px"></p>
                             <p id = 'elevation' x = 50% y = 150 text-anchor = 'middle' style="font-size:24px"></p>
@@ -135,8 +141,8 @@
         </div>
 
         
-        <div class = 'row'>
-            <div id = 'step2' class = 'chart'>
+        <div class = 'row' >
+            <div id = 'step2' class = 'chart instructions'>
                 <svg class = 'title_block' width = '1200'>
                     <text id = 'state_info' x = 50% y = 30 text-anchor = 'middle' font-size = '24px' >Step 2</text>
                 </svg>
@@ -147,7 +153,7 @@
         </div>
        
         <div class = 'row'>
-            <div id = 'step3'class = 'chart'>
+            <div id = 'step3'class = 'chart instructions'>
                 <svg class = 'title_block' width = '1200'>
                     <text id = 'state_info' x = 50% y = 30 text-anchor = 'middle' font-size = '24px' >Step 3</text>
                 </svg>
@@ -159,7 +165,7 @@
             </div> 
         </div>
         <div class = 'row'>
-            <div id = 'step3'class = 'chart'>
+            <div id = 'step3'class = 'chart instructions'>
                 <svg class = 'title_block' width = '1200'>
                     <text id = 'state_info' x = 50% y = 30 text-anchor = 'middle' font-size = '24px' >Step 4</text>
                 </svg>
@@ -196,7 +202,9 @@
                     <svg  width = '400' height = '50' class = 'title_block'>
                         <text id = 'state_info' x = 50% y = 30 text-anchor = 'middle' font-size = '24px' >Pie Charts</text>
                     </svg>
+                    
                     <svg  id = 'state_piechart_op' width = '400' height = '300' class = 'display_block'>
+                        <g id = 'pie_chart_1'></g>
                         <g id="highpoints"></g>
                         <g id = 'pc_1_1'></g>
                         <g id = 'pc_1_2'></g>
@@ -204,6 +212,7 @@
                     </svg>
 
                     <svg  id = 'elevation_piechart_op' width = '400' height = '300' class = 'display_block'>
+                        <g id = 'pie_chart_2'></g>
                         <g id = 'pc_2_1'></g>
                         <g id = 'pc_2_2'></g>
                         <g id = 'pc_2_3'></g>
@@ -321,7 +330,7 @@
         </div>
     </div>
 
-        <div id = 'cover'></div>
+        <!-- <div id = 'cover'></div> -->
         <div id = 'tooltip' class = 'hidden'>
             <p id = 'p_state'></p>
             <p id = 'p_peak'></p>

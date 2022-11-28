@@ -198,3 +198,4 @@ d3.select('#elevation_piechart_op')
         .on('click', completed_states); 
 
 }
+

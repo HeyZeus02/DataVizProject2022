@@ -75,7 +75,7 @@ function lp_table() {
             .attr('y', 0)
             .attr('width', d => elevScale(d.elevation))
             .attr('height',16)
-            .attr('fill', 'black');
+            .attr('class', 'bar_color');
 
     });
 
@@ -86,7 +86,7 @@ function lp_table() {
         .on('click', update_landing_page_info);
 
     d3.selectAll('tr')
-        .style('background-color', 'transparent');
+        .attr('class', 'table_unselected');
     
     
 } // end of lp_table()

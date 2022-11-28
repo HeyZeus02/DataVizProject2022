@@ -101,64 +101,7 @@ function completed_states() {
 }// end of completed_states
 
 
-// function highlight_table() {
-    
-   
 
-//     // Select the hovered over state
-//     let state_name = this.__data__.properties.name
-
-
-
-//     d3.select(`#${state_name}_tr`)
-//         .style('background-color', 'black');
-
-//     //When not on in state
-//     d3.select("#summary_map_lp")
-//         .select('#states')
-//         .selectAll("path")
-//         .on('mouseout', function(d){
-
-//             let state_name = this.__data__.properties.name
-
-
-//         d3.select(`#${state_name}_tr`)
-//         .style('background-color', 'rgba(255, 255, 255, .8)');
-
-//         });
-        
-  
-   
-// }// end of highlight_table
-
-// function highlight_states() {
-   
-
-//     // Select the hovered over state
-//     let row_state = this.id.replace('_tr','')
-
-
-
-
-//     d3.select('#states')
-//     .select(`#${row_state}`)
-//         .style('fill', 'rgba(0, 0, 0, .1)');
-
-//     //When not on row
-//     d3.selectAll("tr")
-//         .on('mouseout', function(d){
-
-//             let row_state = this.id.replace('_tr','')
-
-
-//         d3.select(`#${row_state}`)
-//         .style('fill', 'rgba(255, 255, 255, .8)');
-
-//         });
-        
-  
-   
-// }// end of highlight_states
 
 function barchart_tooltip() {
 
@@ -245,18 +188,20 @@ function update_landing_page_info(){
         d3.select("#summary_map_lp")
             .select('#states')
             .selectAll("path")
-            .attr('stroke-width', '1px')
+            .attr('class', 'unselected')
 
         // Set the stroke width of all table rows back to nothing
         d3.select("#predictionTableBody")
             .selectAll("tr")
-            .style('background-color', 'transparent');
+            .attr('class', 'table_unselected');
+            // .style('background-color', 'transparent');
 
 
 
 
         d3.select("#" + state_name.replace(' ','_') + "_tr")
-            .style('background-color', 'rgba(255, 255, 255, .8)');
+            // .style('background-color', 'rgba(255, 255, 255, .8)');
+            .attr('class', 'table_selected')
 
 
         // Set the stroke width of  the current state to 3px
@@ -264,6 +209,7 @@ function update_landing_page_info(){
             .select('#states')
             .select("#" + state_name.replace(' ','_'))
             .attr('stroke-width', '3px')
+            .attr('class', 'selected');
 
 
 

@@ -42,7 +42,7 @@ function draw_completed_map() {
         .style("fill", "black");
         
         
-    // When mousedover, add the tooltip
+    // When the states are clicked
     d3.select("#completed_map_op")
         .select('#states')
         .selectAll("path")
