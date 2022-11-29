@@ -29,8 +29,11 @@ function gen_arrow_map() {
             .data(mapData.features)
             .join("path")
             .attr("d", path)
-            .attr("id", d => d.properties.name.replace(' ',''))        
-            .attr('class','arrow_state');
+            .attr("id", d => d.properties.name.replace(' ',''))
+            .attr('fill','white')       
+            .attr('stroke','black')
+            .attr('class','state');
+
 
 
         console.log(arrow_data)
@@ -63,9 +66,9 @@ function gen_arrow_map() {
             .attr("y2", d => projection([d.next_X, d.next_Y])[1])
             .attr("marker-end","url(#arrow)")
             .attr('id', d => d.State.replace(' ','') + '_' + d.next_State.replace(' ',''))
-            .attr('class','arrows');
-            // .attr('stroke','red')
-            // .attr('stroke-width', '4px');
+            // .attr('class','arrows');
+            .attr('stroke','red')
+            .attr('stroke-width', '4px');
 
 
 
