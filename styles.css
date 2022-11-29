@@ -47,19 +47,19 @@
 
 /*Input Page Background Color*/
 .ip_color {
-    background-color: #084c61;
+    background-color: #2C5F2D;
 }
 .ip_tab_color {
-    fill: #084c61;
+    fill: #2C5F2D;
 }
 
 /*Output Page Background Color*/
 .op_color {
-    background-color: #339E66FF;
+    background-color: #084c61;
 
 }
 .op_tab_color {
-    fill: #339E66FF; 
+    fill: #084c61; 
 }
 
 /* Sky Color */
@@ -99,7 +99,7 @@ html, body #tabsvg, #tabs{
 
 
 .op_elev_blocks {
-    fill: #339E66FF;
+    fill: #ffa91c;
     stroke: black;
 }
 

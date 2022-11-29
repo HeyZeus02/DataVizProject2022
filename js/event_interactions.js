@@ -57,17 +57,18 @@ function completed_states() {
     d3.select('#completed_map_op')
         .select('#states')
         .select('#' + state_name.replace(' ',''))
-        .attr('stroke-width', '3px')
+        .attr('stroke-width', '10px')
 
     // change the line width of the state pie_chart
     d3.selectAll('.pc_1_slices_g')
       .select('#' + state_name.replace(' ',''))
-      .attr('stroke-width', '3px')
+      .attr('stroke-width', '7px')
 
     // change the line width of the state pie_chart
         d3.selectAll('.pc_2_slices_g')
         .select('#' + state_name.replace(' ',''))
-        .attr('stroke-width', '3px')
+        .attr('stroke-width', '7px')
+        .attr('stroke', '#E3170AFF')
     
 
     // Change the 2nd line of text to match the hovered circle
