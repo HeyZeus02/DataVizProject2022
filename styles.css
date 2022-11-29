@@ -91,7 +91,7 @@ html, body #tabsvg, #tabs{
 }
 
 .table_selected {
-    background-color: rgba(42, 150, 238, 0.8);
+    background-color: rgba(8, 76, 97, .5);
     /* background-color: rgba(255, 255, 255, .8); */
     border: 3px solid black;   
 }
