@@ -24,7 +24,8 @@ function lp_table() {
     let rowSelection = d3.select('#predictionTableBody')
         .selectAll('tr')
         .data(table_data)
-        .join('tr');
+        .join('tr')
+        .attr('id',d => d.state.replace(' ','_') + '_tr');
 
     // Add Cells
     rowSelection.selectAll("td")
@@ -74,9 +75,18 @@ function lp_table() {
             .attr('y', 0)
             .attr('width', d => elevScale(d.elevation))
             .attr('height',16)
-            .attr('fill', 'black');
+            .attr('class', 'bar_color');
 
     });
+
+    // d3.selectAll("tr")
+    // .on('mouseover', highlight_states);
+
+    d3.selectAll("tr")
+        .on('click', update_landing_page_info);
+
+    d3.selectAll('tr')
+        .attr('class', 'table_unselected');
     
     
 } // end of lp_table()
