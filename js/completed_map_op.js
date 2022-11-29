@@ -29,7 +29,7 @@ function draw_completed_map() {
         .attr("id", d => d.properties.name.replace(' ',''))        
         .attr('class','state')
         .attr('stroke', 'black')
-        .attr('fill', d => d.properties.visited == 0 ? 'white' : '#084c61');
+        .attr('fill', d => d.properties.visited == 0 ? '#a4a4a4' : '#177e89');
     
     // Add each highpoint to the map
     d3.select("#completed_map_op").select('#highpoints')

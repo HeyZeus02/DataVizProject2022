@@ -42,7 +42,7 @@ function state_pie_chart_op() {
     groups.append("path")
         .attr("transform", "translate(" + svg_x + "," + svg_y+ ")")
         .attr("d", arc)
-        .style("fill", d => d.data.Date == 'Invalid Date' ? 'lightgray' : '#084c61')
+        .style("fill", d => d.data.Date == 'Invalid Date' ? '#a4a4a4' : '#177e89')
         .attr('stroke', 'black')
         .attr('id', d => d.data.State.replace(' ',''))
         .attr('class', 'pc_1_slices');
@@ -131,7 +131,7 @@ function elevation_pie_chart_op() {
     groups.append("path")
         .attr("transform", "translate(" + svg_x + "," + svg_y+ ")")
         .attr("d", arc)
-        .style("fill", d => d.data.Date == 'Invalid Date' ? 'lightgray' : '#084c61')
+        .style("fill", d => d.data.Date == 'Invalid Date' ? '#a4a4a4' : '#177e89')
         .attr('stroke', 'black')
         .attr('id', d => d.data.State.replace(' ',''))
         .attr('class', 'pc_2_slices');

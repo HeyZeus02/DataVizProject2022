@@ -43,32 +43,38 @@ function completed_states() {
     d3.select('#completed_map_op')
         .select('#states')
         .selectAll('path')
-        .attr('stroke-width', '1px');
+        .attr('stroke-width', '1px')
+        .attr('stroke', 'black');
 
     // Change the stroke of all slices in first piechart back to 1
         d3.selectAll('.pc_1_slices')
-        .attr('stroke-width', '1px');
+        .attr('stroke-width', '1px')
+        .attr('stroke', 'black');
 
      // Change the stroke of all slices in second piechart back to 1
         d3.selectAll('.pc_2_slices')
-        .attr('stroke-width', '1px');
+        .attr('stroke-width', '1px')
+        .attr('stroke', 'black');
 
     // change the line width of the state pie_chart
     d3.select('#completed_map_op')
         .select('#states')
         .select('#' + state_name.replace(' ',''))
-        .attr('stroke-width', '10px')
+        .attr('stroke-width', '3px')
+        .attr('stroke', '#00ffef');
 
     // change the line width of the state pie_chart
     d3.selectAll('.pc_1_slices_g')
       .select('#' + state_name.replace(' ',''))
-      .attr('stroke-width', '7px')
+      .attr('stroke-width', '3px')
+      .attr('stroke', '#00ffef');
+
 
     // change the line width of the state pie_chart
         d3.selectAll('.pc_2_slices_g')
         .select('#' + state_name.replace(' ',''))
-        .attr('stroke-width', '7px')
-        .attr('stroke', '#E3170AFF')
+        .attr('stroke-width', '3px')
+        .attr('stroke', '#00ffef')
     
 
     // Change the 2nd line of text to match the hovered circle

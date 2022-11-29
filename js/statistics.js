@@ -1,5 +1,7 @@
 function generate_statistics(){
 
+    console.log(visited_highpoints);
+
     let number_of_years = d3.max(visited_highpoints.map(d => d.Year)) - d3.min(visited_highpoints.map(d => d.Year));
     let state_per_year = visited_highpoints.length/number_of_years.toFixed(2)
 

@@ -13,6 +13,8 @@ function gen_arrow_map() {
         console.log(arrow_data);
 
         let c_arrow_data = arrow_data.concat(last_state)
+        visited_highpoints = c_arrow_data;
+
 
         console.log(c_arrow_data);
 
@@ -219,6 +221,8 @@ function gen_arrow_map() {
                 .attr('opacity', 1)
 
 });
+
+
 
 }
 

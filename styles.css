@@ -47,10 +47,10 @@
 
 /*Input Page Background Color*/
 .ip_color {
-    background-color: #2C5F2D;
+    background-color: #61346B;
 }
 .ip_tab_color {
-    fill: #2C5F2D;
+    fill: #61346B;
 }
 
 /*Output Page Background Color*/
@@ -99,7 +99,7 @@ html, body #tabsvg, #tabs{
 
 
 .op_elev_blocks {
-    fill: #ffa91c;
+    fill: #177e89;
     stroke: black;
 }
 

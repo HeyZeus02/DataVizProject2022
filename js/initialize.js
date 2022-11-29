@@ -117,19 +117,25 @@ function create_tabs(){
     d3.select('#tab3')
         .append('text')
         .text('OUTPUT PAGE')
-        .attr('transform', `translate(470,185)`);
+        .attr('transform', `translate(470,185)`)
+        .style('fill','white')
+        .style('font-weight', 'bold');
 
     // Add label for Tab 2    
     d3.select('#tab2')
         .append('text')
         .text('INPUT PAGE')
-        .attr('transform', `translate(275,185)`);
+        .attr('transform', `translate(275,185)`)
+        .style('fill','white')
+        .style('font-weight', 'bold');
 
     // Add label for Tab 1
     d3.select('#tab1')
         .append('text')
         .text('OVERVIEW')
-        .attr('transform', `translate(65,185)`);
+        .attr('transform', `translate(65,185)`)
+        .style('fill','white')
+        .style('font-weight', 'bold');
 
     // Calculate where the middle of the screen of the user
     let middle_screen = d3.select('#tabsvg').style('width').replace('px','')/2;
@@ -240,7 +246,9 @@ function handleFileLoad(event) {
     d3.select('#tab3')
         .append('text')
         .text('OUTPUT PAGE')
-        .attr('transform', `translate(470,185)`);
+        .attr('transform', `translate(470,185)`)
+        .style('fill','white')
+        .style('font-weight', 'bold');
     
 } // end of fileFileLoad() 
 
@@ -276,7 +284,9 @@ function on_tab_click() {
             d3.select('#tab1')
                 .append('text')
                 .text('OVERVIEW')
-                .attr('transform', `translate(65,185)`);
+                .attr('transform', `translate(65,185)`)
+                .style('fill','white')
+                .style('font-weight', 'bold');
 
 
 
@@ -313,7 +323,9 @@ function on_tab_click() {
             d3.select('#tab2')
                 .append('text')
                 .text('INPUT PAGE')
-                .attr('transform', `translate(275,185)`);
+                .attr('transform', `translate(275,185)`)
+                .style('fill','white')
+                .style('font-weight', 'bold');
 
         }
 
@@ -345,7 +357,9 @@ function on_tab_click() {
             d3.select('#tab3')
                 .append('text')
                 .text('OUTPUT PAGE')
-                .attr('transform', `translate(470,185)`);
+                .attr('transform', `translate(470,185)`)
+                .style('fill','white')
+                .style('font-weight', 'bold');
 
             
         }
