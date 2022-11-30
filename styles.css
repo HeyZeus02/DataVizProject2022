@@ -18,7 +18,10 @@
     margin: 5px;
     justify-content: center;
 }
-
+#links {
+    display: flex;
+    justify-content: right;
+}
 .instructions {
 
     margin-bottom: 30px;

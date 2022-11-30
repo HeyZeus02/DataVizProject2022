@@ -250,6 +250,9 @@ function handleFileLoad(event) {
         .style('fill','white')
         .style('font-weight', 'bold');
     
+    d3.select('#links')
+        .attr('class', 'op_color')
+
 } // end of fileFileLoad() 
 
 
@@ -288,7 +291,8 @@ function on_tab_click() {
                 .style('fill','white')
                 .style('font-weight', 'bold');
 
-
+            d3.select('#links')
+                .attr('class', 'lp_color')
 
 
             
@@ -326,6 +330,8 @@ function on_tab_click() {
                 .attr('transform', `translate(275,185)`)
                 .style('fill','white')
                 .style('font-weight', 'bold');
+            d3.select('#links')
+                .attr('class', 'ip_color')
 
         }
 
@@ -361,7 +367,8 @@ function on_tab_click() {
                 .style('fill','white')
                 .style('font-weight', 'bold');
 
-            
+            d3.select('#links')
+                .attr('class', 'op_color')
         }
 
     // Add in functionality so that when tab is clicked the correct page is displayed
