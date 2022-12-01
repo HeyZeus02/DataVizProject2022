@@ -184,6 +184,14 @@ html, body #tabsvg, #tabs{
     font-size: 25px;
 }
 
+#page_1_button {
+    background-color:  rgba(255, 255, 255, .5);
+    font-size: 24px;
+    width: 350px;
+    border: none;
+    margin: 5px;
+}
+
 #directions {
     position: relative;
     /* left: 600px; */

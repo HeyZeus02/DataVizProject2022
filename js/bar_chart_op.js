@@ -124,7 +124,12 @@ function gen_bar_chart() {
     // Change the 2nd line of text to match the hovered circle
     d3.select('#tooltip')
         .select('#p_peak')
-        .text(mean_line_data.yearly_mean.toFixed(2) + ' ft');
+        .text(mean_line_data.yearly_mean.toFixed(2) + ' feet');
+    
+    d3.select('#tooltip')
+        .select('#p_elevation')
+        .text('');
+    
 
     d3.select('#barchart_per_year_op')
         .select('#mean_line')
