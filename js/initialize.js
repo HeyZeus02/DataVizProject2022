@@ -202,6 +202,10 @@ function handleFileLoad(event) {
     // Filter out only visited highpoints and store 
     visited_highpoints = high_points.filter(d => d.Date != 'Invalid Date');
 
+    if (visited_highpoints.length == 0) {
+        alert('It seems your template has no visited highpoints!\nPlease read through the directions and ensure you have placed dates of the highpoints you visited in the 3rd column and save the template.\nPlease ensure you are selecting the correct template to upload.')
+    }
+
     // Calculate cumulative ascent
     visited_highpoints = visited_highpoints.sort((a, b) => a.Date - b.Date);
     visited_highpoints[0].Cum_Elevation = visited_highpoints[0].Elevation
@@ -209,6 +213,8 @@ function handleFileLoad(event) {
     for (let i = 1; i<visited_highpoints.length; i++){
         visited_highpoints[i].Cum_Elevation = visited_highpoints[i-1].Cum_Elevation + visited_highpoints[i].Elevation;
     }
+
+    console.log(visited_highpoints);
 
 
     // Call function to make the output graphs
